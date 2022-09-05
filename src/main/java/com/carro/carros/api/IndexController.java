@@ -34,4 +34,15 @@ public class IndexController {
 		
 	};
 	
+	//BUSCANDO OBJETO POR ID
+	@GetMapping("/carro/{id}")
+	public String BuscarPorId(@PathVariable("id") Long id) {
+		return "Id do carro: " + id;
+	};
+	//BUNCADO OBJETO POR TIPO. ONDE O RETORNO SERÁ UMA ARRAY DE TIPO.
+	@GetMapping("/carro/tipo/{tipo}")
+	public String BuscarPorTipo(@PathVariable("tipo") String tipo) {
+		return "Lista de carro por tipo: " + tipo;
+	}
+	
 }
