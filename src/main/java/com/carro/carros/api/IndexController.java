@@ -3,7 +3,7 @@ package com.carro.carros.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +25,14 @@ public class IndexController {
 		return "login: " +login + " senha: " + senha;
 		
 	};
+	//MÉTODO MAIS ADEQUANDO POR GUARDAR A SENHA E LOGIN. NÃO APARECERÁ COM O POST NA URL.
+	@PostMapping("/login")
+	public String LoginPost(@PathVariable("login") String login,@PathVariable("senha") Long senha) {
+		return "login: " +login + " senha: " + senha;
+	}
+	
+	
+	
 	
 	//OBS: NESTE EXEMPLO FOI USANDO O "PathVariable" NO LUGAR DO "RequestParam"
 	@GetMapping("/login/{login}/senha/{senha}")
